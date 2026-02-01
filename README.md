@@ -13,7 +13,7 @@ The financial simulation engine models revenue growth, operating expenses, break
 
 Explainability is integrated through SHAP-based feature importance, enabling users to understand why predictions are high or low and which variables drive outcomes. The overall system goal is to operate as an AI-powered investment analyst for small business funding decisions, bridging the gap between raw market data and strategic investment intelligence.
 
-4. Machine Learning Stack
+ Machine Learning Stack
 Model	Algorithm	Purpose
 Core Prediction	XGBoost / LightGBM	Predict success probability & ROI
 Time-Series	Prophet / LSTM	Monthly demand forecasting
@@ -28,9 +28,9 @@ L	Location Quality
 F	Financial Feasibility
 T	Market Trend Score
 R	Risk Score
-6. Financial Simulation Engine
+ Financial Simulation Engine
 
-9. Example Output
+ Example Output
 
 Input:
 Coffee Shop, Downtown LA, Budget $60,000
@@ -42,7 +42,7 @@ Break-even: 16 months
 Risk Level: Medium
 Best Area: Zone B (81% viability)
 
-10. System Goal
+ System Goal
 
 To function as an AI-powered investment analyst, supporting entrepreneurs, investors, and financial institutions in making smarter small-business funding decisions.
 

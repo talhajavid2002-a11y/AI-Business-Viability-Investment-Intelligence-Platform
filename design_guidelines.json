@@ -1,0 +1,155 @@
+{
+  "identity": {
+    "persona": "E1: The Anti-AI Designer",
+    "mission": "Create a 'Stripe meets Bloomberg' investment platform. Trustworthy, data-dense, yet emotionally calm.",
+    "principles": [
+      "Fusion: Corporate clarity (Stripe) + Data density (Bloomberg).",
+      "Emotion: Calm confidence. Money requires stillness.",
+      "Content: Data is the hero. Everything else is support.",
+      "Contrast: High contrast for data points, subtle for structure."
+    ]
+  },
+  "typography": {
+    "fonts": {
+      "headings": {
+        "family": "Manrope",
+        "weights": ["600", "700", "800"],
+        "usage": "Page titles, Section headers, KPI values"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": ["400", "500"],
+        "usage": "General text, labels, descriptions"
+      },
+      "data": {
+        "family": "JetBrains Mono",
+        "weights": ["400", "500"],
+        "usage": "Financial tables, tickers, precise metrics"
+      }
+    },
+    "rules": [
+      "Headings > 32px must use tracking-tight.",
+      "Overlines (e.g., 'RISK SCORE') must be uppercase, text-xs, tracking-widest.",
+      "Data numbers must be tabular-nums for alignment."
+    ]
+  },
+  "colors": {
+    "palette": {
+      "light": {
+        "background": "#FFFFFF",
+        "surface": "#F8F9FA",
+        "surface_highlight": "#F1F3F5",
+        "text_primary": "#111827",
+        "text_secondary": "#6B7280",
+        "border": "#E5E7EB"
+      },
+      "dark": {
+        "background": "#0A0A0A",
+        "surface": "#171717",
+        "surface_highlight": "#262626",
+        "text_primary": "#EDEDED",
+        "text_secondary": "#A1A1AA",
+        "border": "#27272A"
+      },
+      "semantic": {
+        "primary": "#0F172A",
+        "primary_dark": "#F8FAFC",
+        "accent": "#3B82F6",
+        "success": "#10B981",
+        "warning": "#F59E0B",
+        "danger": "#EF4444",
+        "risk_high": "#DC2626",
+        "risk_medium": "#F59E0B",
+        "risk_low": "#10B981"
+      }
+    },
+    "gradients": {
+      "viability_score": "linear-gradient(90deg, #EF4444 0%, #F59E0B 50%, #10B981 100%)",
+      "premium_overlay": "linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 100%)"
+    }
+  },
+  "layout": {
+    "grid_system": {
+      "dashboard": "Bento Grid Mode B (High Density)",
+      "columns": "grid-cols-1 md:grid-cols-12",
+      "gap": "gap-4 md:gap-6"
+    },
+    "spacing": {
+      "container_padding": "p-6 md:p-8",
+      "section_gap": "gap-8",
+      "internal_padding": "p-4"
+    },
+    "structure": {
+      "app_shell": "Sidebar (Left, Fixed, 280px) + Main Content (Right, Scrollable)",
+      "split_view": "Input Panel (Left, 30%) + Analysis Results (Right, 70%)"
+    }
+  },
+  "components": {
+    "cards": {
+      "style": "Flat, 1px border, no shadow (Light Mode) / Subtle glow (Dark Mode)",
+      "border_radius": "rounded-lg",
+      "padding": "p-5"
+    },
+    "buttons": {
+      "primary": "bg-primary text-primary-foreground hover:opacity-90 rounded-md px-4 py-2 font-medium transition-all",
+      "secondary": "border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md px-4 py-2 transition-all"
+    },
+    "charts": {
+      "library": "Recharts",
+      "style": "Minimalist, thin lines, gradient fills for areas",
+      "colors": ["#3B82F6", "#10B981", "#F59E0B", "#EF4444"]
+    },
+    "maps": {
+      "library": "React Map GL / Leaflet",
+      "style": "Custom monochrome (Light: Silver/Grey, Dark: Dark Matter)",
+      "overlays": "Heatmap layers for 'Competition' and 'Demand'"
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": "backdrop-blur-md bg-white/70 dark:bg-black/60 border border-white/20 (Use for sticky headers)",
+    "borders": "1px solid border-border",
+    "shadows": "shadow-sm for interactive elements only"
+  },
+  "images": {
+    "backgrounds": [
+      {
+        "url": "https://images.unsplash.com/photo-1701515502209-60254f467c0f?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "category": "hero_bg",
+        "description": "Black and white modern city skyline, high contrast"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1746393464106-2c45a09f7ec3?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "category": "auth_bg",
+        "description": "Towering skyscrapers, abstract"
+      }
+    ],
+    "business_types": [
+      {
+        "url": "https://images.unsplash.com/photo-1765894711185-63800b16dbba?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "category": "cafe",
+        "description": "Modern cafe interior"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1766802981873-b2416a9d43df?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "category": "retail",
+        "description": "Modern retail storefront"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1765728617352-895327fcf036?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "category": "tech_office",
+        "description": "Modern tech office hallway"
+      }
+    ]
+  },
+  "universal_guidelines": [
+    "DO NOT use gradients for backgrounds. Use solid colors or subtle noise.",
+    "DO NOT use 'Inter' for headings. Use 'Manrope'.",
+    "DO NOT center text by default. Left align for readability.",
+    "ALWAYS use 'tabular-nums' for financial data.",
+    "ALWAYS provide a 'Dark Mode' toggle.",
+    "Use 'Sonner' for toasts.",
+    "Use 'Lucide React' for icons.",
+    "Ensure all interactive elements have 'data-testid'."
+  ],
+  "instructions_to_main_agent": "Implement the 'Dashboard' page first. Use the 'Bento Grid' layout. Create a 'ViabilityScore' component using a semi-circle gauge. Use the provided image URLs for the 'Business Type' selection cards."
+}

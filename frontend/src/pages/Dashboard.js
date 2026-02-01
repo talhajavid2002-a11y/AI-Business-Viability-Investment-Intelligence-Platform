@@ -7,10 +7,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import ViabilityScoreGauge from '@/components/ViabilityScoreGauge';
-import FinancialChart from '@/components/FinancialChart';
-import HeatMapView from '@/components/HeatMapView';
-import CompetitionView from '@/components/CompetitionView';
+import ViabilityScoreGauge from '../components/ViabilityScoreGauge';
+import FinancialChart from '../components/FinancialChart';
+import HeatMapView from '../components/HeatMapView';
+import CompetitionView from '../components/CompetitionView';
 import { toast } from 'sonner';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;

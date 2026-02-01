@@ -1,29 +1,28 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Moon, Sun, TrendingUp, DollarSign, AlertTriangle, MapPin, Building2 } from 'lucide-react';
+import { Moon, Sun, TrendingUp, Building2 } from 'lucide-react';
 import { useTheme } from '../components/ThemeProvider';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+import { Button } from '../components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
+import { Input } from '../components/ui/input';
+import { Label } from '../components/ui/label';
+import { toast } from 'sonner';
 import ViabilityScoreGauge from '../components/ViabilityScoreGauge';
 import FinancialChart from '../components/FinancialChart';
 import HeatMapView from '../components/HeatMapView';
 import CompetitionView from '../components/CompetitionView';
-import { toast } from 'sonner';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
-export default function Dashboard() {
+const Dashboard = () => {
   const { theme, setTheme } = useTheme();
   const [businessTypes, setBusinessTypes] = useState([]);
   const [locations, setLocations] = useState([]);
   const [loading, setLoading] = useState(false);
   const [analysisResult, setAnalysisResult] = useState(null);
   
-  // Form state
   const [formData, setFormData] = useState({
     business_type: '',
     location_id: '',
@@ -32,7 +31,6 @@ export default function Dashboard() {
     risk_appetite: 'medium'
   });
 
-  // Load business types and locations
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -87,7 +85,6 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
       <header className="border-b bg-surface backdrop-blur-md sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -112,7 +109,6 @@ export default function Dashboard() {
 
       <main className="container mx-auto px-6 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* Left Panel - Input Form */}
           <div className="lg:col-span-4 space-y-6">
             <Card data-testid="input-panel">
               <CardHeader>
@@ -210,7 +206,6 @@ export default function Dashboard() {
               </CardContent>
             </Card>
 
-            {/* Quick Stats */}
             {analysisResult && (
               <Card data-testid="quick-stats-card">
                 <CardHeader>
@@ -246,7 +241,6 @@ export default function Dashboard() {
             )}
           </div>
 
-          {/* Right Panel - Results */}
           <div className="lg:col-span-8 space-y-6">
             {!analysisResult ? (
               <Card className="h-[500px] flex items-center justify-center" data-testid="empty-state">
@@ -260,10 +254,8 @@ export default function Dashboard() {
               </Card>
             ) : (
               <>
-                {/* Viability Score */}
                 <ViabilityScoreGauge score={analysisResult.viability_score} />
 
-                {/* AI Insights */}
                 <Card data-testid="ai-insights-card">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
@@ -278,7 +270,6 @@ export default function Dashboard() {
                   </CardContent>
                 </Card>
 
-                {/* Positive & Risk Factors */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <Card data-testid="positive-factors-card">
                     <CardHeader>
@@ -319,7 +310,6 @@ export default function Dashboard() {
                   </Card>
                 </div>
 
-                {/* Financial Projection */}
                 {formData.business_type && formData.location_id && (
                   <FinancialChart 
                     businessType={formData.business_type}
@@ -328,7 +318,6 @@ export default function Dashboard() {
                   />
                 )}
 
-                {/* Competition Analysis */}
                 {formData.location_id && formData.business_type && (
                   <CompetitionView 
                     locationId={formData.location_id}
@@ -336,7 +325,6 @@ export default function Dashboard() {
                   />
                 )}
 
-                {/* Heat Map */}
                 {formData.business_type && (
                   <HeatMapView businessType={formData.business_type} />
                 )}
@@ -347,4 +335,6 @@ export default function Dashboard() {
       </main>
     </div>
   );
-}
+};
+
+export default Dashboard;

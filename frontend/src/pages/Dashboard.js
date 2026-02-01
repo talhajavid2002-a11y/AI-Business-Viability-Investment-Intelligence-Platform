@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Moon, Sun, TrendingUp, DollarSign, AlertTriangle, MapPin, Building2 } from 'lucide-react';
-import { useTheme } from '@/components/ThemeProvider';
+import { useTheme } from '../components/ThemeProvider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
